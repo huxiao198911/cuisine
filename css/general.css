@@ -1,0 +1,856 @@
+/*  icon fonts */
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id 2878866 */
+    src: url('iconfonts/iconfont.woff2?t=1635233246613') format('woff2'), url('iconfonts/iconfont.woff?t=1635233246613') format('woff'), url('iconfonts/iconfont.ttf?t=1635233246613') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-delete:before {
+    content: "\e67e";
+}
+
+.icon-minus-circle-fill:before {
+    content: "\e844";
+}
+
+.icon-plus-circle-fill:before {
+    content: "\e845";
+}
+
+.icon-buy:before {
+    content: "\e614";
+}
+
+.icon-number:before {
+    content: "\e611";
+}
+
+.icon-wrong:before {
+    content: "\e646";
+}
+
+.icon-correct:before {
+    content: "\e62e";
+}
+
+.icon-lemon:before {
+    content: "\e62b";
+}
+
+.icon-vege:before {
+    content: "\e62c";
+}
+
+.icon-egg:before {
+    content: "\e627";
+}
+
+.icon-cake:before {
+    content: "\e628";
+}
+
+.icon-oven:before {
+    content: "\e629";
+}
+
+.icon-cook:before {
+    content: "\e62a";
+}
+
+.icon-chicken:before {
+    content: "\e621";
+}
+
+.icon-ham:before {
+    content: "\e622";
+}
+
+.icon-time:before {
+    content: "\e623";
+}
+
+.icon-steam:before {
+    content: "\e624";
+}
+
+.icon-fish:before {
+    content: "\e625";
+}
+
+.icon-plant:before {
+    content: "\e626";
+}
+
+.icon-twitterlogo:before {
+    content: "\e60a";
+}
+
+.icon-facebook:before {
+    content: "\e6ee";
+}
+
+.icon-menu:before {
+    content: "\e615";
+}
+
+.icon-arrow-right:before {
+    content: "\e618";
+}
+
+.icon-star-empty:before {
+    content: "\e619";
+}
+
+.icon-cart:before {
+    content: "\e61a";
+}
+
+.icon-cross:before {
+    content: "\e61b";
+}
+
+.icon-arrow-left:before {
+    content: "\e61c";
+}
+
+.icon-account:before {
+    content: "\e61d";
+}
+
+.icon-home:before {
+    content: "\e61e";
+}
+
+.icon-star-half-empty:before {
+    content: "\e61f";
+}
+
+.icon-star-fill:before {
+    content: "\e620";
+}
+
+.icon-arrow-down:before {
+    content: "\e617";
+}
+
+.icon-arrow-up:before {
+    content: "\e616";
+}
+
+.icon-youtube:before {
+    content: "\e62d";
+}
+
+
+/* general styles */
+
+* {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #418C9F;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #D98A3F;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* ##### mobile first ##### */
+
+
+/* header */
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header nav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#showMenuLabel {
+    display: none;
+}
+
+#showMenu {
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+#showMenu::after {
+    content: "\e615";
+    display: block;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-family: "iconfont";
+    color: #fff;
+}
+
+header nav #menu {
+    width: 100%;
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.75);
+    ;
+    height: 0;
+    transition: height 1s;
+}
+
+header nav #menu li {
+    height: 80px;
+    line-height: 80px;
+    padding-left: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    display: none;
+}
+
+header nav #menu li a {
+    display: block;
+}
+
+header nav #menu li:last-child {
+    border-bottom: none;
+}
+
+.active a,
+header nav li:hover a {
+    color: #D98A3F;
+}
+
+#showMenu:checked+div+ul {
+    height: 800px;
+}
+
+#showMenu:checked+div+ul li {
+    display: block;
+}
+
+header .adHoc div {
+    line-height: 100px;
+    position: absolute;
+}
+
+header .adHoc #account {
+    right: 20%;
+}
+
+header .adHoc #cart {
+    right: 5%;
+}
+
+header .adHoc i {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+header .adHoc .active i {
+    background-color: #D98A3F;
+}
+
+header #hLogo {
+    display: none;
+}
+
+header #hLogo a img,
+footer #fLogo a img {
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 1s;
+}
+
+header #hLogo a img:hover,
+footer #fLogo a img:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* general section styles */
+
+section {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+section .card {
+    position: relative;
+}
+
+
+/* hero images styles for multipages, like campagne.html, every recipe page and every news page starts */
+
+.hero {
+    width: 100%;
+    position: relative;
+}
+
+.hero h2 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.heroImg {
+    width: 100vw;
+    height: 100vw;
+    overflow: hidden;
+}
+
+.heroImg img {
+    width: 100%;
+}
+
+
+/* hero images styles ends */
+
+
+/* books, news, recipes section articles cards strat */
+
+.card {
+    padding: 1rem 0;
+}
+
+.cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    border-radius: 2px;
+    background-color: #D98A3F;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* book section */
+
+.card>a {
+    display: block;
+    width: 90vw;
+    height: 90vw;
+    overflow: hidden;
+}
+
+.card>a img {
+    display: block;
+    width: 100%;
+}
+
+#books h2,
+#nBooks h2,
+#popBooks h2,
+#webBooks h2 {
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+#books .card .bContent,
+#nBooks .card .bContent {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#books .card .bContent p,
+#nBooks .card .bContent p {
+    color: #FFF;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.card .cta {
+    display: block;
+    width: 80%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.35);
+}
+
+.bPrice {
+    text-align: right;
+    margin: 1rem;
+}
+
+
+/* news section */
+
+#news .card,
+#mainNews .card,
+#recipes .card,
+#nRecipes .card,
+#mainRecipes .card {
+    padding: 1rem;
+}
+
+#news .card .cta,
+#mainNews .card .cta,
+#recipes .card .cta,
+#nRecipes .card .cta,
+#mainRecipes .card .cta {
+    position: static;
+    transform: translateX(0);
+    margin: 2rem auto;
+}
+
+#news .card p,
+#mainNews .card p {
+    font-weight: 500;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+#news .card>a,
+#mainNews .card>a,
+#recipes .card>a,
+#nRecipes .card>a,
+#mainRecipes .card>a {
+    display: block;
+    height: 70vw;
+    overflow: hidden;
+    margin-left: -1rem;
+}
+
+#news .card>a img,
+#recipes .card>a img,
+#mainRecipes .card:nth-of-type(2)>a img,
+#mainRecipes .card:nth-of-type(3)>a img,
+#mainRecipes .card:nth-of-type(5)>a img {
+    width: 150%;
+    margin-left: -25%;
+}
+
+#mainNews .card>a img {
+    width: 130%;
+    margin-left: -25%;
+}
+
+#nRecipes .card>a img,
+#mainRecipes .card>a img,
+#mainRecipes .card:first-of-type>a img {
+    margin-top: -10rem;
+    width: 100%;
+}
+
+#mainRecipes .card>a img {
+    margin: 0;
+}
+
+
+/* recipes content */
+
+#recipes,
+#nRecipes,
+#mainRecipes {
+    overflow: hidden;
+}
+
+#recipes #steps,
+#nRecipes #steps,
+#mainRecipes #steps {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#recipes #steps li,
+#nRecipes #steps li,
+#mainRecipes #steps li {
+    margin: 0.5rem 0;
+}
+
+#recipes .card:first-of-type a img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -4rem;
+}
+
+#recipes .card #foodIcons,
+#nRecipes .card #foodIcons,
+#mainRecipes .card #foodIcons {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+#recipes .card #foodIcons li,
+#nRecipes .card #foodIcons li,
+#mainRecipes .card #foodIcons li {
+    display: inline-block;
+    margin: 0 0.2rem;
+    text-align: center;
+}
+
+#recipes .card #foodIcons li:last-child,
+#nRecipes .card #foodIcons li:last-child,
+#mainRecipes .card #foodIcons li:last-child {
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#recipes .card #foodIcons li i,
+#nRecipes .card #foodIcons li i,
+#mainRecipes .card #foodIcons li i {
+    color: #418C9F;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+#recipes .card #foodIcons li span,
+#nRecipes .card #foodIcons li span,
+#mainRecipes .card #foodIcons li span {
+    display: block;
+    font-size: 0.5rem;
+}
+
+
+/* books, news, recipes section articles cards strat */
+
+
+/* footer */
+
+footer {
+    width: 100%;
+    height: 550px;
+    background-color: #418C9F;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+footer #fLogo {
+    padding: 2rem;
+}
+
+footer #fNav li {
+    margin: 1rem 0 1rem 2rem;
+}
+
+footer #fNav a:hover {
+    color: #D98A3F;
+}
+
+footer #fNav li a {
+    font-size: 1.3rem;
+}
+
+footer #socialMedia {
+    position: absolute;
+    top: 12%;
+    right: 5%;
+}
+
+footer #socialMedia li {
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+
+footer #socialMedia li i {
+    font-size: 3rem;
+}
+
+footer address {
+    line-height: 2rem;
+    position: absolute;
+    bottom: 15%;
+    right: 2rem;
+}
+
+footer .copyright {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ##### tabelt ##### */
+
+@media screen and (min-width:768px) {
+    header nav #menu #hHome {
+        display: none;
+    }
+    #showMenu:checked+div {
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #showMenu:checked+div+ul {
+        height: 700px;
+    }
+    /* hero images styles for multipages, like campagne.html, every recipe page and every news page starts */
+    .heroImg {
+        height: 70vw;
+    }
+    .heroImg img {
+        margin-top: -20%
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    /* cards */
+    #books .card>a {
+        height: 50vw;
+    }
+    #nBooks .card,
+    #news .card,
+    #mainNews .card {
+        width: 40vw;
+        float: left;
+        margin-left: 5vw;
+    }
+    #nBooks .card>a,
+    #news .card>a,
+    #mainNews .card>a {
+        width: 40vw;
+        height: 35vw;
+    }
+    #news .card .cta,
+    #mainNews .card .cta {
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: 5%;
+    }
+    #news .card:nth-of-type(3),
+    #recipes .card:nth-of-type(3) {
+        display: none;
+    }
+    #recipes .card,
+    #nRecipes .card,
+    #mainRecipes .card {
+        width: 40vw;
+        float: left;
+        margin-left: 5vw;
+    }
+    #recipes .card .cta,
+    #nRecipes .card .cta,
+    #mainRecipes .card .cta {
+        width: 100%;
+    }
+    #recipes .card>a,
+    #nRecipes .card>a,
+    #mainRecipes .card>a {
+        width: 40vw;
+        height: 35vw;
+    }
+    /* footer */
+    footer {
+        height: 450px;
+    }
+    footer #fLogo {
+        padding: 4rem;
+    }
+    footer #fNav {
+        position: absolute;
+        left: 2rem;
+        bottom: 5%;
+    }
+    footer address {
+        line-height: 2rem;
+        position: absolute;
+        bottom: 5%;
+        right: 2rem;
+    }
+}
+
+@media screen and (min-width:992px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    #books .card:nth-of-type(3) {
+        display: none;
+    }
+    #news .card .cta,
+    #mainNews .card .cta {
+        position: static;
+        transform: translateX(0);
+    }
+    #books .card,
+    #nBooks .card,
+    #news .card,
+    #mainNews .card {
+        width: 40vw;
+        float: left;
+        margin-left: 5vw;
+    }
+    #books .card>a,
+    #nBooks .card>a,
+    #news .card>a,
+    #mainNews .card>a {
+        width: 40vw;
+        height: 35vw;
+    }
+}
+
+
+/* ##### desktop ##### */
+
+@media screen and (min-width:1280px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    /* header */
+    header {
+        position: relative;
+    }
+    header #showMenu:after {
+        display: none;
+    }
+    header nav #menu {
+        background-color: transparent;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        width: 96vw;
+    }
+    header nav #menu li {
+        display: inline-block;
+        opacity: 1;
+        border-bottom: none;
+        padding: 0 1rem;
+        height: 100px;
+        line-height: 100px;
+    }
+    header nav .active {
+        background-color: #D98A3F;
+    }
+    header nav .active a {
+        color: #FFF;
+    }
+    header nav #menu li a {
+        font-size: 1.3rem;
+    }
+    header nav #menu li:nth-child(4) {
+        margin-right: 12rem;
+    }
+    header nav #menu li:nth-child(7) {
+        display: none;
+    }
+    header #hLogo {
+        display: none;
+    }
+    header .adHoc #account {
+        right: 10%;
+    }
+    header .adHoc #cart {
+        right: 4%;
+    }
+    /* hero images styles for multipages, like campagne.html, every recipe page and every news page starts */
+    .hero {
+        margin-top: 0;
+    }
+    .heroImg {
+        height: 50vw;
+    }
+    .heroImg img {
+        margin-top: -30%
+    }
+    .hero h2 {
+        font-size: 3rem;
+    }
+    /* books, news, recipes card */
+    #books .card,
+    #news .card,
+    #mainNews .card,
+    #recipes .card,
+    #nRecipes .card,
+    #mainRecipes .card {
+        width: 28%;
+        margin-left: 4%;
+    }
+    #recipes .card>a,
+    #books .card>a,
+    #news .card>a,
+    #mainNews .card>a,
+    #nRecipes .card>a,
+    #mainRecipes .card>a {
+        width: 25vw;
+        height: 20vw;
+    }
+    #books .card:nth-of-type(3),
+    #news .card:nth-of-type(3),
+    #recipes .card:nth-of-type(3) {
+        display: block;
+    }
+    /* footer */
+    footer {
+        height: 480px;
+    }
+    footer #fLogo {
+        padding: 2rem 4rem;
+    }
+    footer #fLogo img {
+        width: 10%;
+    }
+}

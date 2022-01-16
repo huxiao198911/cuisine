@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Raleway:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/subpageHeader.css">
+    <link rel="stylesheet" href="../../css/webshop.css">
+    <title>Cuisine shopping cart</title>
+</head>
+
+<body>
+    <!-- header start -->
+    <header id="header">
+        <nav>
+            <label for="showMenu" id="showMenuLabel"></label>
+            <input type="checkbox" id="showMenu" role="button">
+            <div id="hLogo">
+                <a href="../../index.html">
+                    <img src="../../images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <ul id="menu">
+                <li id="hHome"><a href="../../index.html">Home</a></li>
+                <li><a href="../campagne/campagne.html">Campagne</a></li>
+                <li><a href="../recepten/recipes.html">Recepten</a></li>
+                <li><a href="../nieuws/news.html">Nieuws</a></li>
+                <li><a href="../overOns/about.html">Over Ons</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../shopcart/shop.html">Winkelwagen</a></li>
+                <li><a href="../webshop/shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="adHoc">
+            <div id="account">
+                <a href="../account/account.html">
+                    <i class="iconfont icon-account"></i>
+                </a>
+            </div>
+            <div id="cart" class="active">
+                <a href="cart.html">
+                    <i class="iconfont icon-cart"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- contact content start -->
+    <main id="shoppingCartContent">
+        <h1>Winkelwagen </h1>
+        <div class="proContainer">
+            <div class="product">
+                <div class="imgContainer">
+                    <img src="../../images/boeken/bbq.jpg" alt="smokey bbq">
+                </div>
+                <div>
+                    <h2>Smokey bbq</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam deleniti assumenda nesciunt impedit id expedita quos, quasi quidem libero fugiat quas nulla quam. Delectus expedita reiciendis eum quae culpa.</p>
+                </div>
+
+                <div class="b-detail">
+                    <span>Prijs: &euro;<span class="sPrice">29.99</span></span>
+                    <div>
+                        <label for="quantity">
+                        Aantal:
+                         <input type="number" name="quantity" id="quantity1" value="1" min="1">
+                    </label>
+                        <i class="iconfont icon-delete"></i>
+                    </div>
+                    <span>Total: &euro;<span class="tPrice">29.99</span></span>
+                </div>
+            </div>
+            <div class="product">
+                <div class="imgContainer">
+                    <img src="../../images/boeken/bbq.jpg" alt="smokey bbq">
+                </div>
+                <div>
+                    <h2>Smokey bbq</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam deleniti assumenda nesciunt impedit id expedita quos, quasi quidem libero fugiat quas nulla quam. Delectus expedita reiciendis eum quae culpa.</p>
+                </div>
+                <div class="b-detail">
+                    <span>Prijs: &euro;<span class="sPrice">10.99</span></span>
+                    <div>
+                        <label for="quantity">
+                        Aantal:
+                        <input type="number" name="quantity" id="quantity2" value="1" min="1">
+                    </label>
+                        <i class="iconfont icon-delete"></i>
+                    </div>
+                    <span>Total: &euro;<span class="tPrice">10.99</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="totalPrice">
+            <div class="promoteCode">
+                <label for="code">
+                    Kortingscode
+                    <input type="text" name="code" id="code">
+                </label>
+            </div>
+            <div class="pay">
+                <ul>
+                    <li>
+                        <span>Totaal Artikelen: </span>
+                        <span>&euro;<span id="noTaxPrice">40.98</span>
+                    </li>
+                    <li>
+                        <span>BTW: </span><span>&euro;
+                        <span id="tax">8.6</span>
+                    </li>
+                    <li>
+                        <span>Verzendkosten: </span><span>&euro;
+                        <span id="postPrice">3.99</span>
+                    </li>
+                    <li>
+                        <span>Totaal Artikelen: </span>
+                        <span>&euro;<span id="withTaxPrice">53.58</span>
+                    </li>
+                </ul>
+                <div>
+                    <button id="btnPay">Afrekenen>></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- contact content end -->
+
+    <!-- footer start -->
+    <footer id="footer">
+        <div id="fLogo">
+            <a href="../../index.html">
+                <img src="../../images/logo.svg" alt="logo">
+            </a>
+        </div>
+        <ul id="fNav">
+            <li>
+                <a href="../campagne/campagne.html">Campagne</a>
+            </li>
+            <li>
+                <a href="../recepten/recipes.html">Recepten</a>
+            </li>
+            <li>
+                <a href="../nieuws/news.html">Nieuws</a>
+            </li>
+            <li>
+                <a href="../overOns/about.html">Over Cuisine</a>
+            </li>
+            <li>
+                <a href="../contact/contact.html">Contact</a>
+            </li>
+        </ul>
+        <ul id="socialMedia">
+            <li>
+                <a href="www.facebook.com">
+                    <i class="iconfont icon-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.twitter.com">
+                    <i class="iconfont icon-twitterlogo"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.youtube.com">
+                    <i class="iconfont icon-youtube"></i>
+                </a>
+            </li>
+        </ul>
+        <address>
+            Cuisine B.V.<br>
+            Egelenburg 150-152<br>
+            1081 GK | Amsterdam
+        </address>
+        <div class="copyright">
+            <p>Cuisine B.V. copyright 2018</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="../../js/database.js"></script>
+    <script src="../../js/fucForMultiPages.js"></script>
+    <script src="../../js/webshop.js"></script>
+</body>
+
+</html>

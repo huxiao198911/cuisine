@@ -1,0 +1,189 @@
+/* ##### this page contains the styles of recipes.html and every recipe page */
+
+
+/*1. here are the styles of the recipes.html page */
+
+#recipesContent {
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+#recipesContent h1,
+#rFilter {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+#recipesContent h1 {
+    border-bottom: 1px solid #418C9F;
+}
+
+#rFilter>div {
+    width: 50vw;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#rFilter>div+div {
+    width: 40vw;
+}
+
+#rFilter .iconfont {
+    color: #418C9F;
+}
+
+#rFilter .eatNumber {
+    margin: 2rem 0;
+    flex-direction: row;
+    align-items: center;
+}
+
+#rFilter .eatNumber .iconfont {
+    font-size: 2rem;
+    padding-right: 1rem;
+}
+
+#rFilter .eatNumber input {
+    flex: 1;
+}
+
+
+/* ##### tablet ##### */
+
+@media screen and (min-width:768px) {
+    #rFilter>div {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #rFilter .eatNumber {
+        margin-left: 3vw;
+    }
+    #rFilter .iconfont,
+    #rFilter label {
+        font-size: 1.5rem;
+    }
+    #rFilter input[type="checkbox"] {
+        transform: scale(2);
+        margin-right: 0.5rem;
+    }
+}
+
+
+/* ##### desktop ##### */
+
+@media screen and (min-width:1280px) {
+    #rFilter {
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        margin-left: 5vw;
+        float: left;
+    }
+    #rFilter>div {
+        width: 20vw;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 3rem 0;
+    }
+    #rFilter>div>div {
+        margin: 0.5rem 0;
+    }
+    #rFilter .eatNumber {
+        flex-direction: column;
+        align-items: start;
+        margin: 0;
+    }
+    #mainRecipes {
+        width: 70vw;
+        float: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #mainRecipes .card {
+        width: 32vw;
+        margin-left: 0;
+    }
+    #mainRecipes .card>a {
+        width: 32vw;
+        height: 25vw;
+    }
+}
+
+
+/* 2. here are the styles for every recipe webpage */
+
+
+/* ##### mobile first ##### */
+
+.ingredients h2,
+.procedures h2 {
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.ingredients,
+.procedures {
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.ingredients>div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingredients>div .fIcons {
+    display: flex;
+    justify-content: space-around;
+    color: #418C9F;
+}
+
+.material ul {
+    list-style: disc;
+}
+
+.material li {
+    padding: 0.5rem 0;
+}
+
+.procedures ol {
+    list-style: decimal;
+}
+
+.procedures ol li {
+    padding: 1rem 0;
+}
+
+
+/* ##### tablet ##### */
+
+@media screen and (min-width:768px) {
+    .hero+main {
+        display: flex;
+        justify-content: space-around;
+    }
+    .ingredients {
+        width: 30vw;
+        order: 2;
+    }
+    .procedures {
+        width: 50vw;
+        order: 1;
+    }
+    .ingredients>div:first-of-type {
+        flex-direction: column;
+    }
+    .ingredients>div:first-of-type h2 {
+        order: 2;
+    }
+    .fIcons {
+        order: 1;
+        margin-top: 2rem;
+    }
+}

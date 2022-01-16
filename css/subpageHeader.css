@@ -1,0 +1,13 @@
+@media screen and (min-width:768px) {
+    header nav #hLogo {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    header #hLogo a {
+        display: block;
+        margin-top: 40px;
+    }
+}

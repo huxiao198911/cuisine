@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2878866 */
+  src: url('iconfont.woff2?t=1635233246613') format('woff2'),
+       url('iconfont.woff?t=1635233246613') format('woff'),
+       url('iconfont.ttf?t=1635233246613') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-delete:before {
+  content: "\e67e";
+}
+
+.icon-minus-circle-fill:before {
+  content: "\e844";
+}
+
+.icon-plus-circle-fill:before {
+  content: "\e845";
+}
+
+.icon-buy:before {
+  content: "\e614";
+}
+
+.icon-number:before {
+  content: "\e611";
+}
+
+.icon-wrong:before {
+  content: "\e646";
+}
+
+.icon-correct:before {
+  content: "\e62e";
+}
+
+.icon-lemon:before {
+  content: "\e62b";
+}
+
+.icon-vege:before {
+  content: "\e62c";
+}
+
+.icon-egg:before {
+  content: "\e627";
+}
+
+.icon-cake:before {
+  content: "\e628";
+}
+
+.icon-oven:before {
+  content: "\e629";
+}
+
+.icon-cook:before {
+  content: "\e62a";
+}
+
+.icon-chicken:before {
+  content: "\e621";
+}
+
+.icon-ham:before {
+  content: "\e622";
+}
+
+.icon-time:before {
+  content: "\e623";
+}
+
+.icon-steam:before {
+  content: "\e624";
+}
+
+.icon-fish:before {
+  content: "\e625";
+}
+
+.icon-plant:before {
+  content: "\e626";
+}
+
+.icon-twitterlogo:before {
+  content: "\e60a";
+}
+
+.icon-facebook:before {
+  content: "\e6ee";
+}
+
+.icon-menu:before {
+  content: "\e615";
+}
+
+.icon-arrow-right:before {
+  content: "\e618";
+}
+
+.icon-star-empty:before {
+  content: "\e619";
+}
+
+.icon-cart:before {
+  content: "\e61a";
+}
+
+.icon-cross:before {
+  content: "\e61b";
+}
+
+.icon-arrow-left:before {
+  content: "\e61c";
+}
+
+.icon-account:before {
+  content: "\e61d";
+}
+
+.icon-home:before {
+  content: "\e61e";
+}
+
+.icon-star-half-empty:before {
+  content: "\e61f";
+}
+
+.icon-star-fill:before {
+  content: "\e620";
+}
+
+.icon-arrow-down:before {
+  content: "\e617";
+}
+
+.icon-arrow-up:before {
+  content: "\e616";
+}
+
+.icon-youtube:before {
+  content: "\e62d";
+}
+

@@ -1,0 +1,136 @@
+/*##### mobile fisrt #####*/
+
+
+/* hero image */
+
+.heroImg img {
+    width: 150%;
+    height: auto;
+    margin-left: -20%;
+}
+
+.hero p,
+.hero .cta {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero p {
+    width: 80%;
+    color: #FFF;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.hero .cta {
+    display: block;
+    width: 50%;
+    text-align: center;
+    bottom: 10%;
+}
+
+
+/* campagne page main content */
+
+#campagneContent section {
+    margin: 2rem auto;
+}
+
+#campagneContent h1 {
+    padding: 2rem 0;
+}
+
+#campagneContent .withNigella h2,
+#campagneContent .withNigella p {
+    margin: 2rem;
+}
+
+#campagneContent .withNigella p {
+    line-height: 1.6;
+}
+
+#campagneContent .withNigella .cta {
+    display: block;
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#campagneContent section video {
+    width: 100%;
+}
+
+#nBooks .card {
+    display: none;
+}
+
+#nBooks .card:nth-of-type(-n+2) {
+    display: block;
+}
+
+#nIntro p {
+    line-height: 1.6;
+}
+
+#nIntro div {
+    width: 50vw;
+    height: 60vw;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+#nIntro img {
+    width: 100%;
+}
+
+
+/*##### tablet #####*/
+
+@media screen and (min-width:768px) {
+    .hero .heroImg img {
+        width: 150%;
+        margin-left: -20%;
+    }
+    .hero p {
+        font-size: 1.3rem;
+    }
+    .hero .cta {
+        width: 30%;
+    }
+    #campagneContent .withNigella .cta {
+        width: 40vw;
+    }
+    #nIntro p {
+        width: 40vw;
+        float: left;
+    }
+    #nIntro div {
+        width: 40vw;
+        height: 40vw;
+        float: right;
+    }
+}
+
+
+/*##### desktop #####*/
+
+@media screen and (min-width:1280px) {
+    #camVideo {
+        overflow: hidden;
+    }
+    #campagneContent section video {
+        width: 40vw;
+        float: right;
+    }
+    #campagneContent .withNigella {
+        width: 40vw;
+        float: left;
+    }
+}

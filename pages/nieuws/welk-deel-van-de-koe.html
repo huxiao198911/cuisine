@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Raleway:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/subpageHeader.css">
+    <link rel="stylesheet" type="text/css" href="../../css/news.css">
+    <title>Welk deel van de koe?</title>
+    <style>
+        #animation_container {
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script>
+        function LoadGFonts(families, comp) {
+            var lib = comp.getLibrary();
+            var googleObject = {
+                type: "Google",
+                loadedFonts: 0,
+                totalFonts: families.length,
+                callOnLoad: lib.gfontAvailable
+            };
+            for (var i = 0; i < families.length; i++)
+                isFontAvailable(gFontsFamilies[i], googleObject);
+        }
+
+        function isFontAvailable(font, obj) {
+            var timeOut = 5000;
+            var delay = 200;
+            var interval = 0;
+            var timeElapsed = 0;
+
+            function checkFont() {
+                var node = document.createElement("span");
+                node.innerHTML = "giItT1WQy@!-/#";
+                node.style.position = "absolute";
+                node.style.left = "-1000px";
+                node.style.top = "-1000px";
+                node.style.fontSize = "300px";
+                node.style.fontFamily = "sans-serif";
+                node.style.fontVariant = "normal";
+                node.style.fontStyle = "normal";
+                node.style.fontWeight = "normal";
+                node.style.letterSpacing = "0";
+                document.body.appendChild(node);
+                var width = node.offsetWidth;
+                node.style.fontFamily = font + "," + node.style.fontFamily;
+                var returnVal = false;
+                if ((node && node.offsetWidth != width) || timeElapsed >= timeOut) {
+                    obj.loadedFonts++;
+                    if (interval)
+                        clearInterval(interval);
+                    obj.callOnLoad(font, obj.totalFonts);
+                    returnVal = true;
+                }
+                if (node) {
+                    node.parentNode.removeChild(node);
+                    node = null;
+                }
+                timeElapsed += delay;
+                return returnVal;
+            }
+            if (!checkFont()) {
+                interval = setInterval(checkFont, delay);
+            }
+        }
+    </script>
+    <script>
+        var gFontsFamilies = ["Raleway"];
+    </script>
+    <script src="articleKoe.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js'></script>
+    <script>
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
+        function init() {
+            canvas = document.getElementById("canvas");
+            anim_container = document.getElementById("animation_container");
+            dom_overlay_container = document.getElementById("dom_overlay_container");
+            var comp = AdobeAn.getComposition("773C1B3F65D0B2478380AB4BA7B23BE2");
+            var lib = comp.getLibrary();
+            try {
+                if (!(typeof gFontsFamilies === 'undefined' || gFontsFamilies === null))
+                    LoadGFonts(gFontsFamilies, comp);
+                if (!(typeof totalTypekitFonts === 'undefined' || totalTypekitFonts === null)) {
+                    var typekitObject = {
+                        type: 'Typekit',
+                        loadedFonts: 0,
+                        totalFonts: totalTypekitFonts,
+                        callOnLoad: lib.tfontAvailable
+                    };
+                    Typekit.load({
+                        async: true,
+                        'fontactive': function(family) {
+                            isFontAvailable(family, typekitObject);
+                        }
+                    });
+                }
+            } catch (e) {};
+            var loader = new createjs.LoadQueue(false);
+            loader.addEventListener("fileload", function(evt) {
+                handleFileLoad(evt, comp)
+            });
+            loader.addEventListener("complete", function(evt) {
+                handleComplete(evt, comp)
+            });
+            var lib = comp.getLibrary();
+            loader.loadManifest(lib.properties.manifest);
+        }
+
+        function handleFileLoad(evt, comp) {
+            var images = comp.getImages();
+            if (evt && (evt.item.type == "image")) {
+                images[evt.item.id] = evt.result;
+            }
+        }
+
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            var queue = evt.target;
+            var ssMetadata = lib.ssMetadata;
+            for (i = 0; i < ssMetadata.length; i++) {
+                ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                    "images": [queue.getResult(ssMetadata[i].name)],
+                    "frames": ssMetadata[i].frames
+                })
+            }
+            exportRoot = new lib.koe();
+            stage = new lib.Stage(canvas);
+            stage.enableMouseOver();
+            //Registers the "tick" event listener.
+            fnStartAnimation = function() {
+                    stage.addChild(exportRoot);
+                    createjs.Ticker.framerate = lib.properties.fps;
+                    createjs.Ticker.addEventListener("tick", stage);
+                }
+                //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(true, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <!-- header start -->
+    <header id="header">
+        <nav>
+            <label for="showMenu" id="showMenuLabel"></label>
+            <input type="checkbox" id="showMenu" role="button">
+            <div id="hLogo">
+                <a href="../../index.html">
+                    <img src="../../images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <ul id="menu">
+                <li id="hHome"><a href="../../index.html">Home</a></li>
+                <li><a href="../campagne/campagne.html">Campagne</a></li>
+                <li><a href="../recepten/recipes.html">Recepten</a></li>
+                <li class="active"><a href="news.html">Nieuws</a></li>
+                <li><a href="../overOns/about.html">Over Ons</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../shopcart/cart.html">Winkelwagen</a></li>
+                <li><a href="../webshop/shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="adHoc">
+            <div id="account">
+                <a href="../account/account.html">
+                    <i class="iconfont icon-account"></i>
+                </a>
+            </div>
+            <div id="cart">
+                <a href="../shopcart/cart.html">
+                    <i class="iconfont icon-cart"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- hero start -->
+    <section class="hero">
+        <h2>Welk deel van de koe?</h2>
+        <div class="heroImg">
+            <img src="../../images/recepten/chili-kip.jpg" alt="recept voor chilli kip">
+        </div>
+    </section>
+    <!-- hero end -->
+
+    <main class="articlePage">
+        <h2>Welk deel van de koe?</h2>
+        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1400px; height:1284px">
+            <canvas id="canvas" width="1400" height="1284" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1400px; height:1284px; position: absolute; left: 0px; top: 0px; display: block;">
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer">
+        <div id="fLogo">
+            <a href="../../index.html">
+                <img src="../../images/logo.svg" alt="logo">
+            </a>
+        </div>
+        <ul id="fNav">
+            <li>
+                <a href="../campagne/campagne.html">Campagne</a>
+            </li>
+            <li>
+                <a href="../recepten/recipes.html">Recepten</a>
+            </li>
+            <li class="active">
+                <a href="news.html">Nieuws</a>
+            </li>
+            <li>
+                <a href="../overOns/about.html">Over Cuisine</a>
+            </li>
+            <li>
+                <a href="../contact/contact.html">Contact</a>
+            </li>
+        </ul>
+        <ul id="socialMedia">
+            <li>
+                <a href="www.facebook.com">
+                    <i class="iconfont icon-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.twitter.com">
+                    <i class="iconfont icon-twitterlogo"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.youtube.com">
+                    <i class="iconfont icon-youtube"></i>
+                </a>
+            </li>
+        </ul>
+        <address>
+            Cuisine B.V.<br>
+            Egelenburg 150-152<br>
+            1081 GK | Amsterdam
+        </address>
+        <div class="copyright">
+            <p>Cuisine B.V. copyright 2018</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="../../js/database.js"></script>
+    <script src="../../js/fucForMultiPages.js"></script>
+    <script src="../../js/recipes.js"></script>
+</body>
+
+
+</html>

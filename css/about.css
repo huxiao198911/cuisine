@@ -1,0 +1,49 @@
+#usContent .hero div {
+    width: 100vw;
+    height: 60vw;
+    overflow: hidden;
+}
+
+#usContent .hero div img {
+    width: 130%;
+}
+
+#usContent #mainUs {
+    width: 90vw;
+    margin: 2rem auto;
+}
+
+#usContent #mainUs h1 {
+    margin: 2rem 0;
+}
+
+#usContent #mainUs div:first-of-type {
+    width: 90vw;
+    height: 50vw;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+#usContent #mainUs div img {
+    width: 100%;
+}
+
+#usContent #mainUs p {
+    line-height: 1.6;
+}
+
+@media screen and (min-width:768px) {
+    #usContent #mainUs div:first-of-type {
+        width: 40vw;
+        height: 40vw;
+        float: left;
+    }
+    #usContent #mainUs div img {
+        width: 150%;
+    }
+    #usContent #mainUs div~p {
+        width: 40vw;
+        float: right;
+        margin: 1rem 0;
+    }
+}

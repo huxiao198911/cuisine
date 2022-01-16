@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Raleway:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/subpageHeader.css">
+    <link rel="stylesheet" href="../../css/form.css">
+    <title>Account</title>
+</head>
+
+<body>
+    <!-- header start -->
+    <header id="header">
+        <nav>
+            <label for="showMenu" id="showMenuLabel"></label>
+            <input type="checkbox" id="showMenu" role="button">
+            <div id="hLogo">
+                <a href="../../index.html">
+                    <img src="../../images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <ul id="menu">
+                <li id="hHome"><a href="../../index.html">Home</a></li>
+                <li><a href="../campagne/campagne.html">Campagne</a></li>
+                <li><a href="../recepten/recipes.html">Recepten</a></li>
+                <li><a href="../nieuws/news.html">Nieuws</a></li>
+                <li><a href="../overOns/about.html">Over Ons</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../shopcart/cart.html">Winkelwagen</a></li>
+                <li><a href="../webshop/shop.html">Shop</a></li>
+            </ul>
+        </nav>
+        <div class="adHoc">
+            <div id="account">
+                <a href="account.html" class="active">
+                    <i class="iconfont icon-account"></i>
+                </a>
+            </div>
+            <div id="cart">
+                <a href="../shopcart/cart.html">
+                    <i class="iconfont icon-cart"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- account content start -->
+    <main id="accountContent">
+        <h1>Account</h1>
+        <div class="accountList">
+            <ul>
+                <li class="present"><a href="#">Persoonlijke gegevens</a></li>
+                <li><a href="#">Bestellingen</a></li>
+                <li><a href="#">Cadeaubonnen</a></li>
+                <li><a href="#">Verlanglijst</a></li>
+            </ul>
+        </div>
+        <h1>Persoonlijke gegevens</h1>
+        <form id="accountForm" action="#" method="post">
+            <div>
+                <p>Aanhef*:</p>
+                <input type="radio" name="gender" id="genderM" value="De Heer" checked> <label for="genderM">De Heer </label>
+                <input type="radio" name="gender" id="genderF" value="Mevrouw"> <label for="genderM">Mevrouw</label>
+            </div>
+            <div class="username">
+                <div>
+                    <label for="firstname">Voornaam*:<br></label>
+                    <input type="text" id="firstname" name="firstname" value="" placeholder="voornaam" required>
+                </div>
+                <div>
+                    <label for="midname">Tussenvoegsel:<br></label>
+                    <input type="text" id="midname" name="midname" value="" placeholder="tussenvoegsel">
+                </div>
+                <div>
+                    <label for="lastname">Achternaam*:<br></label>
+                    <input type="text" id="lastname" name="lastname" value="" placeholder="achternaam" required>
+                </div>
+            </div>
+            <div>
+                <label for="comname">Bedrijsnaam:<br></label>
+                <input type="text" name="comname" id="comname" value="" placeholder="bederijfsnaam">
+            </div>
+            <div>
+                <label for="birthday">Geboortedatum:<br></label>
+                <input type="date" name="birthday" id="birthday" value="" placeholder="DD/MM/YY">
+            </div>
+            <div class="streetInfo">
+                <div>
+                    <label for="street">Straat*:<br></label>
+                    <input type="text" name="street" id="street" value="" placeholder="street" required>
+                </div>
+                <div class="huisnummer">
+                    <label for="housenum">Huisnummer*:<br></label>
+                    <input type="number" name="housenum" id="housenum" value="" placeholder="huisnummer" min="0" max="10000" required>
+                </div>
+                <div class="post">
+                    <label for="postcode">Postcode*:<br></label>
+                    <input type="text" name="postcode" id="postcode" value="" placeholder="1234AB">
+                </div>
+            </div>
+            <div class="land">
+                <input type="radio" name="country" id="nl" value="Nederland" checked> <label for="nl">Nederland*</label>
+                <input type="radio" name="country" id="others" value="Anders"> <label for="others">Anders:</label>
+                <input type="text" name="others" id="countryOther">
+            </div>
+            <div>
+                <label for="tel">Telefoon:<br></label>
+                <input type="tel" name="tel" id="tel" value="" placeholder="0681234567">
+            </div>
+            <h1>Inloggegevens</h1>
+            <div class="emailInfo">
+                <div>
+                    <label for="email">Email:<br></label>
+                    <input type="email" name="email" id="email" value="" placeholder="uw@email.adres.com" required>
+                </div>
+                <div>
+                    <label for="emailConform">Email bevestigen:<br></label>
+                    <input type="email" name="emailConform" id="emailConform" value="" placeholder="uw@email.adres.com" required>
+                </div>
+            </div>
+            <div class="passwordInfo">
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" value="" required>
+                </div>
+                <div>
+                    <input type="submit" value="Wachtwoord Wijzigen" name="submit" id="submit">
+                </div>
+            </div>
+
+        </form>
+    </main>
+    <!-- contact content end -->
+
+    <!-- footer start -->
+    <footer id="footer">
+        <div id="fLogo">
+            <a href="../../index.html">
+                <img src="../../images/logo.svg" alt="logo">
+            </a>
+        </div>
+        <ul id="fNav">
+            <li>
+                <a href="../campagne/campagne.html">Campagne</a>
+            </li>
+            <li>
+                <a href="../recepten/recipes.html">Recepten</a>
+            </li>
+            <li>
+                <a href="../nieuws/news.html">Nieuws</a>
+            </li>
+            <li>
+                <a href="../overOns/about.html">Over Cuisine</a>
+            </li>
+            <li class="active">
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+        <ul id="socialMedia">
+            <li>
+                <a href="www.facebook.com">
+                    <i class="iconfont icon-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.twitter.com">
+                    <i class="iconfont icon-twitterlogo"></i>
+                </a>
+            </li>
+            <li>
+                <a href="www.youtube.com">
+                    <i class="iconfont icon-youtube"></i>
+                </a>
+            </li>
+        </ul>
+        <address>
+            Cuisine B.V.<br>
+            Egelenburg 150-152<br>
+            1081 GK | Amsterdam
+        </address>
+        <div class="copyright">
+            <p>Cuisine B.V. copyright 2018</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="../../js/database.js"></script>
+    <script src="../../js/fucForMultiPages.js"></script>
+    <script src="../../js/validate-forms.js"></script>
+</body>
+
+</html>

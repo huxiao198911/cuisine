@@ -1,0 +1,152 @@
+/* ##### mobile first ##### */
+
+#canvas {
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#canvas:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+/* main content starts */
+
+
+/* main section {
+    margin: 2rem 0;
+} */
+
+main section {
+    overflow: hidden;
+}
+
+main section h1,
+main section article {
+    margin: 2rem auto;
+    margin-bottom: 0;
+}
+
+main section article {
+    position: relative;
+    height: 60%;
+}
+
+
+/* books, news and recipes section styles are in general.css for  code reuse*/
+
+
+/* over ons starts */
+
+#aboutUs {
+    margin-bottom: 2rem;
+}
+
+#aboutUs article>a {
+    width: 80vw;
+    height: 80vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#aboutUs a img {
+    width: 200%;
+    margin-left: -50%;
+}
+
+#aboutUs p {
+    line-height: 1.5;
+    margin: 2rem 0;
+}
+
+#aboutUs p:nth-of-type(n+2) {
+    text-align: right;
+}
+
+#aboutUs article p:last-of-type {
+    color: #418C9F;
+}
+
+#aboutUs article .cta {
+    position: static;
+    transform: translateX(0);
+    margin: 0 auto;
+}
+
+
+/* over ons ends */
+
+
+/* main content ends */
+
+
+/* ##### tablet ##### */
+
+@media screen and (min-width:768px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    /* books, news and recipes section styles are in general.css for  code reuse*/
+    /* about us */
+    #aboutUs {
+        position: relative;
+        overflow: hidden;
+    }
+    #aboutUs article {
+        position: static;
+    }
+    #aboutUs article>a {
+        width: 45vw;
+        height: 56vw;
+        margin: 0;
+        float: left;
+    }
+    #aboutUs p:nth-of-type(n+2) {
+        width: 38vw;
+        height: auto;
+        float: right;
+        margin: 0;
+        text-align: left;
+    }
+    #aboutUs article .cta {
+        width: 38vw;
+        position: absolute;
+        right: 0;
+        bottom: 7%;
+    }
+}
+
+
+/* ##### desktop ##### */
+
+@media screen and (min-width:1280px) {
+    header {
+        z-index: 0;
+    }
+    /* logo */
+    #animation_container #canvas {
+        top: -60px;
+        left: 85px;
+    }
+    /* about us */
+    #aboutUs p:first-of-type {
+        width: 38vw;
+        float: right;
+        margin-top: 0;
+    }
+    #aboutUs p:nth-of-type(n+2) {
+        margin: 1rem 0;
+    }
+    #aboutUs article .cta {
+        width: 30vw;
+        position: absolute;
+        right: 7%;
+        bottom: 8%;
+    }
+}

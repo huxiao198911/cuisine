@@ -1,0 +1,559 @@
+  /* ##### this page contains the styles of webshop.html, every book page and shopping cart page */
+  /*1. here are the styles of the webshop.html page */
+  
+  section {
+      overflow: hidden;
+  }
+  
+  .card {
+      position: relative;
+  }
+  
+  h1 {
+      padding: 2rem;
+  }
+  
+  h2 {
+      text-transform: uppercase;
+  }
+  
+  p {
+      line-height: 1.6;
+  }
+  
+  .rBold {
+      margin: 1rem;
+      line-height: 1.6;
+  }
+  
+  #bFilter,
+  #bFilter>div {
+      width: 90vw;
+      margin: 0 auto;
+  }
+  
+  #bFilter>div {
+      padding: 1rem;
+      border-top: 1px solid #418C9F;
+  }
+  
+  #bFilter>div:last-of-type {
+      border-bottom: 1px solid #418C9F;
+  }
+  
+  #bFilter div h2 {
+      color: #418C9F;
+  }
+  
+  #bFilter div h2:after {
+      content: '\e617';
+      font-family: "iconfont" !important;
+      font-size: 0.8rem;
+      padding-left: 0.5rem;
+  }
+  
+  #bFilter div ul {
+      display: none;
+      margin-top: 1rem;
+  }
+  
+  #bFilter div ul li {
+      padding: 1rem 1rem;
+  }
+  
+  .pages {
+      display: flex;
+      width: 50vw;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+  }
+  
+  .pages::before,
+  .pages::after {
+      display: inline-block;
+      font-family: "iconfont" !important;
+      font-size: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 3px;
+      background-color: #418C9F;
+      color: #FFF;
+      line-height: 3rem;
+      text-align: center;
+  }
+  
+  .pages::before {
+      content: '\e61c';
+  }
+  
+  .pages::after {
+      content: '\e618';
+  }
+  
+  .pages ul {
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+  }
+  
+  @media screen and (min-width: 768px) {
+      h2 {
+          font-size: 1.5rem;
+      }
+      #bFilter {
+          display: flex;
+          border-bottom: 1px solid #418C9F;
+          justify-content: space-between;
+      }
+      #bFilter .categories {
+          width: 33vw;
+      }
+      #bFilter .prijs {
+          order: 2;
+      }
+      #bFilter .keukens {
+          order: 3;
+          width: 33vw;
+      }
+      #bFilter>div:last-of-type {
+          border-bottom: none;
+      }
+      #popBooks,
+      #webBooks {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      #popBooks .card {
+          width: 42vw;
+      }
+      #popBooks .card>a {
+          width: 42vw;
+          height: 42vw;
+      }
+      #webBooks .card {
+          width: 28vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      #webBooks .card>a {
+          width: 28vw;
+          height: 28vw;
+      }
+  }
+  
+  @media screen and (min-width:1280px) {
+      #bFilter {
+          margin: 5vw 0 0 5vw;
+          width: 22vw;
+          float: left;
+          flex-direction: column;
+          border-bottom: none;
+      }
+      #bFilter div ul {
+          display: block;
+      }
+      #bFilter .prijs::before {
+          content: 'Prijs';
+          display: block;
+          font-size: 1.5rem;
+          color: #418C9F;
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+      }
+      #bFilter .categories,
+      #bFilter .prijs,
+      #bFilter .keukens {
+          width: 22vw;
+          border: none;
+      }
+      #bFilter div ul li {
+          border-top: 1px solid #418C9F;
+          cursor: pointer;
+      }
+      #bFilter div ul li:last-child {
+          border-bottom: 1px solid #418C9F;
+      }
+      #popBooks .card {
+          width: 27vw;
+      }
+      #popBooks .card>a {
+          width: 27vw;
+          height: 27vw;
+      }
+      #webBooks {
+          width: 70vw;
+          float: right;
+          gap: 2vw;
+          justify-content: start;
+      }
+      #webBooks .card {
+          width: 15vw;
+      }
+      #webBooks .card>a {
+          width: 15vw;
+          height: 15vw;
+      }
+  }
+  /* 2. here are the styles for every recipe webpage */
+  /* ##### mobile first ##### */
+  
+  .bookInfo {
+      margin-top: 100px;
+  }
+  
+  .bookGallery {
+      width: 100vw;
+  }
+  
+  .bigImg {
+      width: 90vw;
+      height: 90vw;
+      overflow: hidden;
+      line-height: 90vw;
+  }
+  
+  .bigImg img {
+      width: 100%;
+      vertical-align: middle;
+  }
+  
+  .imgGroup {
+      width: 90vw;
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+  }
+  
+  .imgGroup div {
+      width: 27vw;
+      height: 27vw;
+      overflow: hidden;
+      line-height: 25vw;
+      border: 1px solid #ccc;
+  }
+  
+  .imgGroup img {
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+  }
+  
+  .bookDescription h2,
+  .bookDescription p {
+      padding: 1rem;
+  }
+  
+  .bookDescription .cta {
+      display: block;
+      width: 70vw;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+  }
+  
+  .bookDescription .cta .iconfont {
+      font-size: 2rem;
+  }
+  
+  #webshopPage {
+      width: 90vw;
+      margin: 0 auto;
+  }
+  
+  .review {
+      margin: 2rem 0 3rem 0;
+  }
+  
+  .review>ul {
+      display: flex;
+      margin: 1rem 0;
+      justify-content: space-between;
+  }
+  
+  .review>ul li {
+      text-transform: uppercase;
+      padding-left: 2rem;
+      border-left: 1px solid #000;
+  }
+  
+  .review>ul li:first-child {
+      border: none;
+      padding: 0;
+  }
+  
+  .star {
+      margin: 1rem 0;
+  }
+  
+  .star .iconfont,
+  .badPoints .iconfont {
+      color: #D98A3F;
+  }
+  
+  .goodPoints .iconfont {
+      color: #418C9F;
+  }
+  
+  .points .iconfont {
+      font-size: 1.5rem;
+  }
+  
+  .points ul li {
+      padding: 0.5rem 0;
+  }
+  /* tablet */
+  
+  @media screen and (min-width: 768px) {
+      .bookGallery {
+          width: 40vw;
+          float: left;
+      }
+      .bookGallery .bigImg {
+          width: 40vw;
+          height: 40vw;
+      }
+      .bookGallery .bigImg img {
+          vertical-align: top;
+      }
+      .bookGallery .imgGroup {
+          width: 40vw;
+      }
+      .imgGroup div {
+          width: 13vw;
+          height: 13vw;
+          line-height: 13vw;
+      }
+      .bookDescription {
+          width: 40vw;
+          float: right;
+      }
+      .bookDescription h2 {
+          display: none;
+      }
+      .bookDescription .cta {
+          width: 30vw;
+      }
+      #webshopPage aside,
+      #otherBooks {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      .review {
+          width: 40vw;
+      }
+      #otherBooks .card {
+          width: 40vw;
+      }
+      #otherBooks .card>a {
+          width: 40vw;
+          height: 40vw;
+      }
+  }
+  /* desktop */
+  
+  @media screen and (min-width: 1280px) {
+      .bookGallery {
+          float: right;
+      }
+      .bookDescription {
+          float: left;
+      }
+      aside {
+          width: 25vw;
+          float: left;
+      }
+      aside+section {
+          width: 60vw;
+          float: right;
+      }
+      #otherBooks .card {
+          width: 25vw;
+      }
+      #otherBooks .card>a {
+          width: 25vw;
+          height: 25vw;
+      }
+  }
+  /* 3. here are the styles for shopping cart webpage */
+  /* ##### mobile first ##### */
+  
+  #shoppingCartContent {
+      margin-top: 100px;
+      position: relative;
+  }
+  
+  #shoppingCartContent h1,
+  .product,
+  .totalPrice {
+      width: 90vw;
+      margin: 0 auto;
+  }
+  
+  #shoppingCartContent h1 {
+      padding: 1rem 0;
+      border-bottom: 2px solid #418C9F;
+  }
+  
+  #shoppingCartContent .product {
+      padding: 2rem 0;
+      overflow: hidden;
+  }
+  
+  #shoppingCartContent .product .imgContainer {
+      width: 40vw;
+      height: 40vw;
+      float: left;
+      overflow: hidden;
+  }
+  
+  #shoppingCartContent .product .imgContainer img {
+      width: 100%;
+      height: auto;
+  }
+  
+  #shoppingCartContent .imgContainer+div {
+      width: 40vw;
+      float: left;
+      padding: 0 1rem;
+  }
+  
+  #shoppingCartContent .product .b-detail {
+      padding: 1rem 0;
+      width: 90vw;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  #shoppingCartContent .product .b-detail>div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+  }
+  
+  #shoppingCartContent input {
+      outline: none;
+      border: 1px solid #000;
+      border-radius: 3px;
+  }
+  
+  #shoppingCartContent .product .b-detail input {
+      width: 10vw;
+  }
+  
+  #shoppingCartContent .product .b-detail .iconfont {
+      cursor: pointer;
+      color: #f00;
+  }
+  
+  .totalPrice {
+      padding: 1rem 0;
+      border-top: 2px solid #418C9F;
+  }
+  
+  .totalPrice .promoteCode,
+  .totalPrice .pay {
+      margin: 1rem;
+  }
+  
+  .totalPrice .pay ul li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+  }
+  
+  .totalPrice .pay ul+div {
+      margin-top: 1rem;
+      text-align: right;
+  }
+  
+  .totalPrice .pay ul+div button {
+      border: 1px solid #418C9F;
+      padding: 0.5rem 1rem;
+      background-color: #418C9F;
+      text-transform: uppercase;
+      color: #FFF;
+  }
+  
+  .b-detail>div+span,
+  .pay ul li span:nth-of-type(2) {
+      color: #f00;
+  }
+  /* tablet */
+  
+  @media screen and (min-width: 768px) {
+      #shoppingCartContent .product .imgContainer {
+          width: 30vw;
+          height: 30vw;
+      }
+      #shoppingCartContent .imgContainer+div {
+          width: 30vw;
+      }
+      #shoppingCartContent .product .b-detail {
+          width: 20vw;
+          height: 30vw;
+          float: left;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .totalPrice {
+          display: flex;
+          justify-content: space-between;
+      }
+      .totalPrice .pay ul li {
+          width: 40vw;
+      }
+  }
+  /* desktop */
+  
+  @media screen and (min-width: 1280px) {
+      #shoppingCartContent .product {
+          display: flex;
+      }
+      #shoppingCartContent .product .imgContainer {
+          width: 20vw;
+          height: 20vw;
+      }
+      #shoppingCartContent .imgContainer+div {
+          width: 40vw;
+      }
+      #shoppingCartContent .product .b-detail {
+          flex: 1;
+          height: 20vw;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: start;
+      }
+      #shoppingCartContent .product .b-detail>span:last-of-type {
+          order: 3;
+      }
+      #shoppingCartContent .product .b-detail>div {
+          order: 2;
+          flex-direction: column;
+          align-items: start;
+      }
+      #shoppingCartContent .product .b-detail .iconfont::after {
+          content: "verwijder";
+          display: inline;
+          font-family: 'Raleway', sans-serif;
+          cursor: pointer;
+          text-transform: uppercase;
+          padding-left: 1rem;
+      }
+      #shoppingCartContent .product .b-detail div label {
+          padding-bottom: 1rem;
+      }
+      .totalPrice {
+          justify-content: end;
+      }
+      .totalPrice .pay ul li {
+          justify-content: end;
+      }
+      .totalPrice .pay ul li>span {
+          margin-left: 5rem;
+      }
+  }
